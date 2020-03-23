@@ -1,11 +1,10 @@
 import React from 'react';
-//import loginImg from '../inct.jpg';
+//import loginImg from '../../../icnt.jpg';
+import loginImg from '../../../src/components/login/icnt.jpg';
 import './loginRegister';
 import fire from '../../configure/Fire';
 
 export class Login extends React.Component {
-  //loginImg = "C:\Users\rizwa\InteractiveCaresRepo\icnt.jpg";
-
   constructor(props) {
     super(props);
     //this.state={
@@ -40,7 +39,7 @@ export class Login extends React.Component {
       <div className="base-container" ref={this.props.containerRef}>
         <div className="header"></div>
         <div className="content">
-          <div className="image">{/* <img src={loginImg}/> */}</div>
+          <div className="image">{<img src={loginImg} />}</div>
           <div className="form">
             <div className="form-group">
               <label htmlFor="email">Email</label>

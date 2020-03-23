@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-//import loginImg from "./icnt";
+import loginImg from '../../../src/components/login/ict.png';
 import fire from '../../configure/Fire';
 
 export class Register extends React.Component {
-  //loginImg = "C:\Users\rizwa\InteractiveCaresRepo\icnt.jpg";
   constructor() {
     super();
     this.state = {
@@ -56,7 +55,7 @@ export class Register extends React.Component {
         <div className="header"></div>
         <form onSubmit={this.handleSubmit}>
           <div className="content">
-            <div className="image">{/* <img src={loginImg}/> */}</div>
+            <div className="image">{<img src={loginImg} />}</div>
             <div className="form">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
