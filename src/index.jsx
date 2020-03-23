@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import Home from './components/home';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
@@ -15,9 +15,7 @@ import theme from './theme';
 import './types';
 import { VideoProvider } from './components/VideoProvider';
 
-// See: https://media.twiliocdn.com/sdk/js/video/releases/2.0.0/docs/global.html#ConnectOptions
-// for available connection options.
-const connectionOptions: ConnectOptions = {
+const connectionOptions = {
   bandwidthProfile: {
     video: {
       mode: 'collaboration',
@@ -38,40 +36,32 @@ const VideoApp = () => {
   const { error, setError } = useAppState();
 
   return (
-    // <VideoProvider options={connectionOptions} onError={setError}>
-    // <ErrorDialog dismissError={() => setError(null)} error={error} />
-    <App />
-    //  </VideoProvider>
+    <VideoProvider options={connectionOptions} onError={setError}>
+      <ErrorDialog dismissError={() => setError(null)} error={error} />
+      <App />
+    </VideoProvider>
   );
 };
-
 ReactDOM.render(
-  // <MuiThemeProvider theme={theme}>
-  //   <CssBaseline />
-  //   <Router>
-  //     <AppStateProvider>
-  //       <Switch>
-  //         <PrivateRoute exact path="/">
-  //           <VideoApp />
-  //         </PrivateRoute>
-  //         <PrivateRoute path="/room/:URLRoomName">
-  //           <VideoApp />
-  //         </PrivateRoute>
-  //         <Route path="/login">
-  //           <LoginPage />
-  //         </Route>
-  //         <Redirect to="/" />
-  //       </Switch>
-  //     </AppStateProvider>
-  //   </Router>
-  // </MuiThemeProvider>,
-  // document.getElementById('root')
   <MuiThemeProvider theme={theme}>
-    {/* <CssBaseline /> */}
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-    ,
+    <CssBaseline />
+    <Router>
+      <AppStateProvider>
+        <Switch>
+          <PrivateRoute exact path="/">
+            <VideoApp />
+          </PrivateRoute>
+          <PrivateRoute path="/room/:URLRoomName">
+            <VideoApp />
+          </PrivateRoute>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+
+          <Redirect to="/" />
+        </Switch>
+      </AppStateProvider>
+    </Router>
   </MuiThemeProvider>,
   document.getElementById('root')
 );

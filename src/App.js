@@ -6,11 +6,8 @@ import LocalVideoPreview from './components/LocalVideoPreview/LocalVideoPreview'
 import MenuBar from './components/MenuBar/MenuBar';
 import ReconnectingNotification from './components/ReconnectingNotification/ReconnectingNotification';
 import Room from './components/Room/Room';
-
 import useRoomState from './hooks/useRoomState/useRoomState';
-
 import './App.scss';
-
 import { Login, Register, LoginRegister } from './components/login/index';
 import Home from './components/home';
 
