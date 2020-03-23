@@ -38,32 +38,40 @@ const VideoApp = () => {
   const { error, setError } = useAppState();
 
   return (
-    <VideoProvider options={connectionOptions} onError={setError}>
-      <ErrorDialog dismissError={() => setError(null)} error={error} />
-      <App />
-    </VideoProvider>
+    // <VideoProvider options={connectionOptions} onError={setError}>
+    // <ErrorDialog dismissError={() => setError(null)} error={error} />
+    <App />
+    //  </VideoProvider>
   );
 };
 
 ReactDOM.render(
+  // <MuiThemeProvider theme={theme}>
+  //   <CssBaseline />
+  //   <Router>
+  //     <AppStateProvider>
+  //       <Switch>
+  //         <PrivateRoute exact path="/">
+  //           <VideoApp />
+  //         </PrivateRoute>
+  //         <PrivateRoute path="/room/:URLRoomName">
+  //           <VideoApp />
+  //         </PrivateRoute>
+  //         <Route path="/login">
+  //           <LoginPage />
+  //         </Route>
+  //         <Redirect to="/" />
+  //       </Switch>
+  //     </AppStateProvider>
+  //   </Router>
+  // </MuiThemeProvider>,
+  // document.getElementById('root')
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
-    <Router>
-      <AppStateProvider>
-        <Switch>
-          <PrivateRoute exact path="/">
-            <VideoApp />
-          </PrivateRoute>
-          <PrivateRoute path="/room/:URLRoomName">
-            <VideoApp />
-          </PrivateRoute>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
-      </AppStateProvider>
-    </Router>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+    ,
   </MuiThemeProvider>,
   document.getElementById('root')
 );

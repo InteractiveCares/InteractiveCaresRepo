@@ -103,11 +103,13 @@ export default function MenuBar() {
             <Button type="submit" color="primary" variant="contained" disabled={isConnecting || !name || !roomName}>
               Join Room
             </Button>
+
             {isConnecting && <CircularProgress className={classes.loadingSpinner} />}
           </form>
         ) : (
           <h3>{roomName}</h3>
         )}
+
         <ToggleFullscreenButton />
         <Menu />
       </Toolbar>
