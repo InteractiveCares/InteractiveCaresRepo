@@ -67,7 +67,7 @@ ReactDOM.render(
   // </MuiThemeProvider>,
   // document.getElementById('root')
   <MuiThemeProvider theme={theme}>
-    <CssBaseline />
+    {/* <CssBaseline /> */}
     <React.StrictMode>
       <App />
     </React.StrictMode>
