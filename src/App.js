@@ -34,7 +34,7 @@ import Home from './components/home';
 //       <Main>
 //         {roomState === 'disconnected' ? <LocalVideoPreview /> : <Room />}
 //         <Controls/>
-//       </Main>
+//       </Main> //test
 //       <ReconnectingNotification/> */}
 //       <div>
 //                 <h1>Welcome to Interactive Cares</h1>
