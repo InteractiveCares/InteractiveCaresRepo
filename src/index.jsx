@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Home from './components/home';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-
+import video from '../video';
 import App from './App';
 import AppStateProvider, { useAppState } from './state';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
@@ -14,7 +14,6 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import theme from './theme';
 import './types';
 import { VideoProvider } from './components/VideoProvider';
-
 const connectionOptions = {
   bandwidthProfile: {
     video: {
@@ -32,7 +31,7 @@ const connectionOptions = {
   preferredVideoCodecs: [{ codec: 'VP8', simulcast: true }],
 };
 
-const VideoApp = () => {
+const videoApp = () => {
   const { error, setError } = useAppState();
 
   return (
@@ -49,10 +48,10 @@ ReactDOM.render(
       <AppStateProvider>
         <Switch>
           <PrivateRoute exact path="/">
-            <VideoApp />
+            <videoApp />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
-            <VideoApp />
+            <videoApp />
           </PrivateRoute>
           <Route path="/login">
             <LoginPage />
