@@ -41,9 +41,11 @@ const videoApp = () => {
     </VideoProvider>
   );
 };
+
+//<CssBaseline />
+
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <CssBaseline />
     <Router>
       <AppStateProvider>
         <Switch>
