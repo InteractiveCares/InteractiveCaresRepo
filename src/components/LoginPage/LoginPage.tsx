@@ -7,6 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { ReactComponent as GoogleLogo } from './google-logo.svg';
 import { ReactComponent as TwilioLogo } from './twilio-logo.svg';
+//import loginImg from '../login/icnt.jpg';
+import loginImg from '../login/ict.png';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import videoLogo from './video-logo.png';
@@ -96,9 +98,9 @@ export default function LoginPage() {
     <ThemeProvider theme={theme}>
       <Grid container justify="center" alignItems="flex-start" className={classes.container}>
         <Paper className={classes.paper} elevation={6}>
-          {/* <TwilioLogo className={classes.twilioLogo} /> */}
-          {/* {<img className={classes.videoLogo} src={videoLogo} alt="Video Logo"></img>} */}
-
+          {/* <TwilioLogo className={classes.twilioLogo} />
+           {<img className={classes.videoLogo} src={videoLogo} alt="Video Logo"></img>}  */}
+          <div className="image">{<img src={loginImg} />}</div>
           {process.env.REACT_APP_SET_AUTH === 'firebase' && (
             <Button variant="contained" className={classes.button} onClick={login} startIcon={<GoogleLogo />}>
               Sign in with Google
