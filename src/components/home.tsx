@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import fire from '../configure/Fire';
-import video from './video';
+
 class Home extends Component {
-  constructor(props) {
+  constructor(props: Readonly<{}>) {
     super(props);
     this.logout = this.logout.bind(this);
   }
@@ -10,7 +10,7 @@ class Home extends Component {
     fire.auth().signOut();
   }
   video() {
-    return video;
+    return;
   }
   render() {
     return (
@@ -19,7 +19,7 @@ class Home extends Component {
         <button onClick={this.logout} type="button" className="btn">
           Logout
         </button>
-        <button onClick={this.login} type="button" className="btn">
+        <button type="button" className="btn">
           Discussion Forum
         </button>
         <button onClick={this.video} type="button" className="btn">

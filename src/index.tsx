@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/home';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import video from '../video';
 import App from './App';
 import AppStateProvider, { useAppState } from './state';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
@@ -14,7 +12,11 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import theme from './theme';
 import './types';
 import { VideoProvider } from './components/VideoProvider';
-const connectionOptions = {
+
+import Home from './components/home';
+// See: https://media.twiliocdn.com/sdk/js/video/releases/2.0.0/docs/global.html#ConnectOptions
+// for available connection options.
+const connectionOptions: ConnectOptions = {
   bandwidthProfile: {
     video: {
       mode: 'collaboration',
@@ -31,7 +33,7 @@ const connectionOptions = {
   preferredVideoCodecs: [{ codec: 'VP8', simulcast: true }],
 };
 
-const videoApp = () => {
+const Index = () => {
   const { error, setError } = useAppState();
 
   return (
@@ -42,23 +44,21 @@ const videoApp = () => {
   );
 };
 
-//<CssBaseline />
-
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
+    <CssBaseline />
     <Router>
       <AppStateProvider>
         <Switch>
           <PrivateRoute exact path="/">
-            <videoApp />
+            <Index />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
-            <videoApp />
+            <Index />
           </PrivateRoute>
           <Route path="/login">
             <LoginPage />
           </Route>
-
           <Redirect to="/" />
         </Switch>
       </AppStateProvider>

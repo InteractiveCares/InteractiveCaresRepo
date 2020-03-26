@@ -97,7 +97,7 @@ export default function LoginPage() {
       <Grid container justify="center" alignItems="flex-start" className={classes.container}>
         <Paper className={classes.paper} elevation={6}>
           <TwilioLogo className={classes.twilioLogo} />
-          <img className={classes.videoLogo} src={videoLogo} alt="Video Logo"></img>
+          {<img className={classes.videoLogo} src={videoLogo} alt="Video Logo"></img>}
 
           {process.env.REACT_APP_SET_AUTH === 'firebase' && (
             <Button variant="contained" className={classes.button} onClick={login} startIcon={<GoogleLogo />}>
