@@ -36,7 +36,6 @@ const connectionOptions: ConnectOptions = {
 
 const Index = () => {
   // const { error, setError } = useAppState();
-
   return (
     //<VideoProvider options={connectionOptions} onError={setError}>
     //  <ErrorDialog dismissError={() => setError(null)} error={error} />

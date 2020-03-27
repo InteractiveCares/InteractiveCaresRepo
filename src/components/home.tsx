@@ -3,6 +3,7 @@ import fire from '../configure/Fire';
 import App from '../App';
 import { render } from 'react-dom';
 import Test from '../Test';
+import { Route, Router } from 'react-router-dom';
 
 export default function Home() {
   // constructor(props: Readonly<{}>) {
@@ -28,6 +29,7 @@ export default function Home() {
       <button onClick={App} type="button" className="btn">
         Live Session
       </button>
+      <Route exact path="/" component={App} />
     </div>
   );
 }

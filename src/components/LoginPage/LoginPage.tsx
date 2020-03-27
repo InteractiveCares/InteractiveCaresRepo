@@ -70,9 +70,7 @@ export default function LoginPage() {
   const location = useLocation<{ from: Location }>();
   const [passcode, setPasscode] = useState('');
   const [authError, setAuthError] = useState<Error | null>(null);
-
   const isAuthEnabled = Boolean(process.env.REACT_APP_SET_AUTH);
-
   const login = () => {
     setAuthError(null);
     signIn?.(passcode)
@@ -81,33 +79,29 @@ export default function LoginPage() {
       })
       .catch(err => setAuthError(err));
   };
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     login();
   };
-
   if (user || !isAuthEnabled) {
     history.replace('/');
   }
-
   if (!isAuthReady) {
     return null;
   }
-
   return (
     <ThemeProvider theme={theme}>
       <Grid container justify="center" alignItems="flex-start" className={classes.container}>
         <Paper className={classes.paper} elevation={6}>
           {/* <TwilioLogo className={classes.twilioLogo} />
            {<img className={classes.videoLogo} src={videoLogo} alt="Video Logo"></img>}  */}
+
           <div className="image">{<img src={loginImg} />}</div>
           {process.env.REACT_APP_SET_AUTH === 'firebase' && (
             <Button variant="contained" className={classes.button} onClick={login} startIcon={<GoogleLogo />}>
               Sign in with Google
             </Button>
           )}
-
           {process.env.REACT_APP_SET_AUTH === 'passcode' && (
             <form onSubmit={handleSubmit}>
               <Grid container alignItems="center" direction="column">
