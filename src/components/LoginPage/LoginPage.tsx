@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState, FormEvent } from 'react';
 import { useAppState } from '../../state';
-
+import '../login/App.scss';
+import { Login, Register } from '../login/index';
 import Button from '@material-ui/core/Button';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import Grid from '@material-ui/core/Grid';

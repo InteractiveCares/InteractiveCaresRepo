@@ -22,10 +22,8 @@ const Main = styled('main')({
   height: '100%',
   position: 'relative',
 });
-
 export default function App() {
   const roomState = useRoomState();
-
   return (
     <Container>
       <MenuBar />

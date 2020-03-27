@@ -12,7 +12,6 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import theme from './theme';
 import './types';
 import { VideoProvider } from './components/VideoProvider';
-import Test from './Test';
 
 import Home from './components/home';
 // See: https://media.twiliocdn.com/sdk/js/video/releases/2.0.0/docs/global.html#ConnectOptions
@@ -34,16 +33,15 @@ const connectionOptions: ConnectOptions = {
   preferredVideoCodecs: [{ codec: 'VP8', simulcast: true }],
 };
 
-const Index = () => {
-  // const { error, setError } = useAppState();
-
+export default function Test() {
+  const { error, setError } = useAppState();
   return (
-    //<VideoProvider options={connectionOptions} onError={setError}>
-    //  <ErrorDialog dismissError={() => setError(null)} error={error} />
-    <Test />
-    //  </VideoProvider>
+    <VideoProvider options={connectionOptions} onError={setError}>
+      <ErrorDialog dismissError={() => setError(null)} error={error} />
+      <Home />
+    </VideoProvider>
   );
-};
+}
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
@@ -52,10 +50,10 @@ ReactDOM.render(
       <AppStateProvider>
         <Switch>
           <PrivateRoute exact path="/">
-            <Index />
+            <Test />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
-            <Index />
+            <Test />
           </PrivateRoute>
           <Route path="/login">
             <LoginPage />

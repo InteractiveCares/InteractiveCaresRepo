@@ -2,7 +2,6 @@ import React from 'react';
 import fire from '../../configure/Fire';
 import './App.scss';
 import { Login, Register } from './index';
-
 export class LoginRegister extends React.Component {
   constructor(props) {
     super(props);
@@ -10,15 +9,12 @@ export class LoginRegister extends React.Component {
       isLogginActive: true,
     };
   }
-
   componentDidMount() {
     //Add .right by default
     this.rightSide.classList.add('right');
   }
-
   changeState() {
     const { isLogginActive } = this.state;
-
     if (isLogginActive) {
       this.rightSide.classList.remove('right');
       this.rightSide.classList.add('left');
