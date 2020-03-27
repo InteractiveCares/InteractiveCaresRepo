@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       <h1>Welcome to Interactive Cares</h1>
-      <button type="button" className="btn">
+      {/* <button type="button" className="btn">
         Logout
       </button>
       <button type="button" className="btn">
@@ -28,7 +28,7 @@ export default function Home() {
       </button>
       <button onClick={App} type="button" className="btn">
         Live Session
-      </button>
+      </button> */}
       <Route exact path="/" component={App} />
     </div>
   );
