@@ -39,7 +39,7 @@ const Index = () => {
   return (
     //<VideoProvider options={connectionOptions} onError={setError}>
     //  <ErrorDialog dismissError={() => setError(null)} error={error} />
-    <Test />
+    <Home />
     //  </VideoProvider>
   );
 };

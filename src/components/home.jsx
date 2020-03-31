@@ -21,7 +21,7 @@ class Home extends React.Component {
         <button onClick={this.some} type="button" className="btn">
           Live Session
         </button>
-        {this.state.renderFunction && <Demo01 />}
+        {this.state.renderFunction && <Test />}
       </div>
     );
   }

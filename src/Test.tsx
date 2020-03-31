@@ -38,7 +38,7 @@ export default function Test() {
   return (
     <VideoProvider options={connectionOptions} onError={setError}>
       <ErrorDialog dismissError={() => setError(null)} error={error} />
-      <Home />
+      <App />
     </VideoProvider>
   );
 }
