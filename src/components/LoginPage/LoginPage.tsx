@@ -21,7 +21,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 const useStyles = makeStyles({
   container: {
     height: '100vh',
-    background: '#0D122B',
+    background: 'white',
   },
   twilioLogo: {
     width: '55%',
@@ -102,7 +102,7 @@ export default function LoginPage() {
               Sign in with Google
             </Button>
           )}
-          {process.env.REACT_APP_SET_AUTH === 'passcode' && (
+          {/* {process.env.REACT_APP_SET_AUTH === 'passcode' && (
             <form onSubmit={handleSubmit}>
               <Grid container alignItems="center" direction="column">
                 <TextField
@@ -124,7 +124,7 @@ export default function LoginPage() {
                 </Button>
               </Grid>
             </form>
-          )}
+          )} */}
         </Paper>
       </Grid>
     </ThemeProvider>
